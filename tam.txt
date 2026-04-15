@@ -1,0 +1,1 @@
+nếu đưaảnh và chuyển về ma trận vector của cv2 thì nó có đọc đượcndung kCâu trả lời ngắn: CÓ, đọc được bình thườngThậm chí đây còn là cách chuẩn nhất khiEasyOCRdùng
