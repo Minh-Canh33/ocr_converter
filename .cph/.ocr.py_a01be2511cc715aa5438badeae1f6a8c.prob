@@ -1,0 +1,1 @@
+{"name":"Local: ocr","url":"d:\\ocr_document_converter\\ocr.py","tests":[{"id":1776438209917,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\ocr_document_converter\\ocr.py","group":"local","local":true}

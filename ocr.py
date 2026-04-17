@@ -1,16 +1,11 @@
 import easyocr
 import cv2
 import numpy as np
-# image_path = r"D:\picture.png"
-# reader = easyocr.Reader(['vi','en'])
-# result = reader.readtext(image_path) #-> toa độ,text, độ tin cậy
-# for (bbox,text,prob) in result:
-#     print(text)
-# print(type(result))
-
 
 import tkinter as tk
 from tkinter import filedialog
+from docx import Document
+
 
 # Ẩn cửa sổ chính của tkinter
 root = tk.Tk()
@@ -26,6 +21,18 @@ if file_path:
     # print(path)
     reader = easyocr.Reader(['vi','en'])
     result = reader.readtext(path)
-    with open("tam.txt",'w',encoding='utf-8') as f:
-        for(bbox,text,prob) in result:
-            f.write(text)
+    # with open("tam.txt",'w',encoding='utf-8') as f:
+    #     for(bbox,text,prob) in result:
+    #         f.write(text)
+    s = ""
+    for(bbox,text,prob) in result:
+        print(text)
+        print(bbox)
+        s += "".join(text + " ")
+    print("_"*20)
+    print(s)
+
+# def save_file(filename,content):
+#     file_path = filedialog.asksaveasfilename(
+#         defaultextension=""
+#     )
