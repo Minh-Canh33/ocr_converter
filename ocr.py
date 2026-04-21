@@ -53,28 +53,3 @@ if file_path:
             doc.save(save_path)
             tk.messagebox.showinfo("Success", "Saved as DOCX successfully!")
 
-    def save_as_pdf():
-        # Note: Simple PDF export using a basic approach
-        save_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")])
-        if save_path:
-            from reportlab.pdfgen import canvas
-            from reportlab.lib.pagesizes import letter
-            
-            c = canvas.Canvas(save_path, pagesize=letter)
-            width, height = letter
-            text_object = c.beginText(40, height - 40)
-            text_object.setFont("Helvetica", 12)
-            
-            lines = text_area.get("1.0", tk.END).split('\n')
-            for line in lines:
-                text_object.textLine(line)
-            
-            c.drawText(text_object)
-            c.save()
-            tk.messagebox.showinfo("Success", "Saved as PDF successfully!")
-
-    # Button container
-    btn_frame = tk.Frame(result_window)
-    btn_frame.pack(fill='x', padx=10, pady=10)
-
-    docx_btn = tk.Button(btn_frame, text)
