@@ -52,4 +52,17 @@ if file_path:
             doc.add_paragraph(text_area.get("1.0", tk.END))
             doc.save(save_path)
             tk.messagebox.showinfo("Success", "Saved as DOCX successfully!")
+    
+    # def save_as_pdf():
+    #     save_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF Document", "*.pdf")])
+    #     if save_path:
+    #         from fpdf import FPDF
+    #         pdf = FPDF()
+    #         pdf.add_page()
+    #         pdf.set_auto_page_break(auto=True, margin=15)
+    #         pdf.set_font("Arial", size=12)
+    #         for line in text_area.get("1.0", tk.END).splitlines():
+    #             pdf.cell(0, 10, txt=line, ln=True)
+    #         pdf.output(save_path)
+    #         tk.messagebox.showinfo("Success", "Saved as PDF successfully!")
 
