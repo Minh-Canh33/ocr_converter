@@ -51,7 +51,7 @@ if file_path:
             doc = Document()
             doc.add_paragraph(text_area.get("1.0", tk.END))
             doc.save(save_path)
-            tk.messagebox.showinfo("Success", "Saved as DOCX successfully!")
+            tk.messagebox.showinfo("Success", "Saved as DOCX successfully! ")
     
     # def save_as_pdf():
     #     save_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF Document", "*.pdf")])
