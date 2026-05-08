@@ -5,6 +5,7 @@ import numpy as np
 import tkinter as tk
 from tkinter import filedialog
 from docx import Document
+from fpdf import FPDF
 
 
 # Ẩn cửa sổ chính của tkinter
@@ -53,16 +54,22 @@ if file_path:
             doc.save(save_path)
             tk.messagebox.showinfo("Success", "Saved as DOCX successfully! ")
     
-    # def save_as_pdf():
-    #     save_path = filedialog.asksaveasfilename(defaultextension=".pdf", filetypes=[("PDF Document", "*.pdf")])
-    #     if save_path:
-    #         from fpdf import FPDF
-    #         pdf = FPDF()
-    #         pdf.add_page()
-    #         pdf.set_auto_page_break(auto=True, margin=15)
-    #         pdf.set_font("Arial", size=12)
-    #         for line in text_area.get("1.0", tk.END).splitlines():
-    #             pdf.cell(0, 10, txt=line, ln=True)
-    #         pdf.output(save_path)
-    #         tk.messagebox.showinfo("Success", "Saved as PDF successfully!")
+    def save_pdf(path, text):
+
+        pdf = FPDF()
+
+        pdf.add_page()
+
+        pdf.add_font(
+            "DejaVu",
+            "",
+            "DejaVuSans.ttf",
+            uni=True
+        )
+
+        pdf.set_font("DejaVu", size=12)
+
+        pdf.multi_cell(0, 10, text)
+
+        pdf.output(path)
 

@@ -3,3 +3,4 @@ ocr_venv/
 __pycache__/
 *.pyc
 .env
+ocr.py
